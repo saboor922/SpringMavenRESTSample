@@ -1,0 +1,6 @@
+com\rest\sample\api\domain\Value.class
+com\rest\sample\api\service\RestApiService.class
+com\rest\sample\api\RestApiApplication.class
+com\rest\sample\api\controller\RestApiController.class
+com\rest\sample\api\domain\Quote.class
+com\rest\sample\api\service\implementation\RestApiServiceImpl.class
