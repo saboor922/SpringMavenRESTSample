@@ -8,7 +8,6 @@ public class Value {
     public Value() {
     }
 
-
     public Long getId() {
         return id;
     }
