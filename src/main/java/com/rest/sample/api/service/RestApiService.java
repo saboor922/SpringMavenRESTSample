@@ -1,9 +1,11 @@
 package com.rest.sample.api.service;
 
 import com.rest.sample.api.domain.Quote;
-import org.springframework.http.ResponseEntity;
+import com.rest.sample.api.domain.Vehicle;
 
 public interface RestApiService {
 
-    ResponseEntity<Quote> randomClient();
+    Quote randomClient();
+
+    Vehicle findVehicleByRegistrationNumber(String registrationNumber);
 }

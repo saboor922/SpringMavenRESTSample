@@ -1,11 +1,12 @@
 package com.rest.sample.api.service.implementation;
 
 import com.rest.sample.api.domain.Quote;
+import com.rest.sample.api.domain.Vehicle;
+import com.rest.sample.api.repository.VehicleRepository;
 import com.rest.sample.api.service.RestApiService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,8 +17,16 @@ public class RestApiServiceImpl implements RestApiService {
     @Value("${randomUrl.path}")
     private String randomUrl;
 
+    @Autowired
+    private VehicleRepository vehicleRepositoryImpl;
+
     @Override
-    public ResponseEntity<Quote> randomClient() {
-        return new ResponseEntity<Quote>(new RestTemplate().getForObject(randomUrl, Quote.class), HttpStatus.OK);
+    public Quote randomClient() {
+        return new RestTemplate().getForObject(randomUrl, Quote.class);
+    }
+
+    @Override
+    public Vehicle findVehicleByRegistrationNumber(String registrationNumber) {
+        return vehicleRepositoryImpl.findByRegistrationNumber(registrationNumber);
     }
 }

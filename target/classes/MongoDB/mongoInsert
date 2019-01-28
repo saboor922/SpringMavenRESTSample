@@ -1,0 +1,36 @@
+db.vehicle.insert(
+[
+{
+        "registration_number" : "RV64KWO",
+        "manufacturer" : "BMW",
+        "model" : "428i",
+        "sub_model" : "M Sport",
+        "year" : NumberInt(2015),
+        "category" : [
+                "sports",
+                "coupé"
+        ]
+},
+{
+        "registration_number" : "NB67TR",
+        "manufacturer" : "Toyota",
+        "model" : "CHR",
+        "sub_model" : "Deluxe",
+        "year" : NumberInt(2018),
+        "category" : [
+                "crossover",
+                "suv"
+        ]
+},
+{
+        "registration_number" : "FF64YU",
+        "manufacturer" : "Mercedes Benz",
+        "model" : "A45",
+        "sub_model" : "AMG",
+        "year" : NumberInt(2017),
+        "category" : [
+                "sports",
+                "hatchback"
+        ]
+}
+])
