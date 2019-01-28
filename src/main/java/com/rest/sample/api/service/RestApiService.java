@@ -5,5 +5,5 @@ import org.springframework.http.ResponseEntity;
 
 public interface RestApiService {
 
-    ResponseEntity<Quote> random();
+    ResponseEntity<Quote> randomClient();
 }

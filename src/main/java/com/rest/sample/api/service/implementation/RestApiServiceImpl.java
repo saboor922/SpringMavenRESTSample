@@ -17,7 +17,7 @@ public class RestApiServiceImpl implements RestApiService {
     private String randomUrl;
 
     @Override
-    public ResponseEntity<Quote> random() {
+    public ResponseEntity<Quote> randomClient() {
         return new ResponseEntity<Quote>(new RestTemplate().getForObject(randomUrl, Quote.class), HttpStatus.OK);
     }
 }

@@ -22,10 +22,10 @@ public class RestApiController {
         return "Welcome " + name + ". Greetings from Spring Boot!";
     }
 
-    @RequestMapping(value = "/random", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Quote> random() {
+    @RequestMapping(value = "/randomClient", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Quote> randomClient() {
         try {
-            return restApiService.random();
+            return restApiService.randomClient();
         } catch (Exception ex) {
             ex.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
