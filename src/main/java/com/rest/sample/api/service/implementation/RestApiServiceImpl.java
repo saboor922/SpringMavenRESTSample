@@ -10,6 +10,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Service
 @PropertySource("classpath:application.properties")
 public class RestApiServiceImpl implements RestApiService {
@@ -26,7 +28,34 @@ public class RestApiServiceImpl implements RestApiService {
     }
 
     @Override
-    public Vehicle findVehicleByRegistrationNumber(String registrationNumber) {
-        return vehicleRepositoryImpl.findByRegistrationNumber(registrationNumber);
+    public List<Vehicle> getAllVehicles() {
+        return vehicleRepositoryImpl.findAll();
     }
+
+    @Override
+    public Vehicle getVehicleByRegistrationNumber(String registrationNumber) {
+        return vehicleRepositoryImpl.findByRegistrationNumberIgnoreCase(registrationNumber);
+    }
+
+    @Override
+    public List<Vehicle> getByManufacturer(String manufacturer) {
+        return vehicleRepositoryImpl.findByManufacturerIgnoreCase(manufacturer);
+    }
+
+    @Override
+    public Vehicle createVehicle(Vehicle vehicle) {
+        return vehicleRepositoryImpl.save(vehicle);
+    }
+
+    @Override
+    public Vehicle updateVehicle(Vehicle vehicle, String registration) {
+        return vehicleRepositoryImpl.updateVehicleByRegistration(vehicle, registration);
+    }
+
+    @Override
+    public void deleteVehicle(String registration) {
+        vehicleRepositoryImpl.deleteVehicleByRegistrationNumberIgnoreCase(registration);
+    }
+
+
 }

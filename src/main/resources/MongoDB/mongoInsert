@@ -23,6 +23,17 @@ db.vehicle.insert(
         ]
 },
 {
+        "registration_number" : "VF13RT",
+        "manufacturer" : "Toyota",
+        "model" : "Yaris",
+        "sub_model" : "G",
+        "year" : NumberInt(2013),
+        "category" : [
+                "hatchback",
+                "hybrid"
+        ]
+},
+{
         "registration_number" : "FF64YU",
         "manufacturer" : "Mercedes Benz",
         "model" : "A45",
@@ -31,6 +42,17 @@ db.vehicle.insert(
         "category" : [
                 "sports",
                 "hatchback"
+        ]
+},
+{
+        "registration_number" : "OP18QQ",
+        "manufacturer" : "Mercedes Benz",
+        "model" : "E300",
+        "sub_model" : "AMG",
+        "year" : NumberInt(2018),
+        "category" : [
+                "sports",
+                "sedan"
         ]
 }
 ])
